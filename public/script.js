@@ -39,7 +39,7 @@ document.getElementById('whatsapp-form').addEventListener('submit', function(eve
             ).join('\n');
 
             // Appeler Twilio API pour envoyer le message WhatsApp
-            fetch('http://localhost:3000/send-card', {
+            fetch('/api/send-card', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
