@@ -1,10 +1,5 @@
 const twilio = require('twilio');
 
-const cors = require('cors');
-app.use(cors({
-    origin: 'https://mangaverse-cards-battles.vercel.app',  // CORS pour ton domaine de production
-}));
-
 // SID et Auth Token Twilio
 const accountSid = 'AC11ee726eb1532ae76beeb48a341e176c';
 const authToken = '2eb515ba6c76619c200139609db66422';
