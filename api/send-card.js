@@ -1,4 +1,4 @@
-const twilio = require('twilio');
+import twilio from 'twilio';
 
 // SID et Auth Token Twilio
 const accountSid = 'AC11ee726eb1532ae76beeb48a341e176c'; // Remplace par ton SID Twilio
