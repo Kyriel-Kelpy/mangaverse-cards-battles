@@ -1,6 +1,14 @@
-// api/send-card.js
-
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const twilio = require('twilio');
+const app = express();
+
+// Middleware pour lire les requêtes JSON
+app.use(bodyParser.json());
+
+// Middleware pour autoriser CORS
+app.use(cors());
 
 const accountSid = 'AC11ee726eb1532ae76beeb48a341e176c';  // Ton SID Twilio
 const authToken = '2eb515ba6c76619c200139609db66422';  // Ton Auth Token Twilio
