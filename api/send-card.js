@@ -11,14 +11,18 @@ module.exports = async (req, res) => {
     const { number, message } = req.body;
 
     try {
+      console.log(`Envoi du message à ${number}: ${message}`);  // Log pour vérifier le message
+
       const response = await client.messages.create({
         body: message,
         from: 'whatsapp:+14155238886',  // Ton numéro WhatsApp Twilio
         to: `whatsapp:${number}`
       });
 
+      console.log('Message envoyé avec succès:', response.sid);  // Log de succès
       return res.status(200).json({ success: true, sid: response.sid });
     } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error);  // Log de l'erreur
       return res.status(500).json({ success: false, error: error.message });
     }
   } else {
